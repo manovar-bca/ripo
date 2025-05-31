@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCAHUB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    /* SCROLLABLE LINKS */
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-left: 0;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      padding: 20px;
+      margin-top: 130px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #0073e6;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    pre code {
+      background-color: #333;
+      color: #f1f1f1;
+      display: block;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+
+
+    /* CALCULATOR MENU *
+    .calculator-menu {
+      background-color: #fff;
+      height: 350px;
+      width: 350px;
+      border: none;
+      margin-left: 20px;
+      padding: 20px;
+      overflow-y: auto;
+      cursor: default;
+    }
+
+    .calculator-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .calculator-menu li a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      margin: 5px 0;
+      transition: color 0.2s;
+    }
+
+    .calculator-menu li a:hover {
+      color: #007BFF;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      
+      margin-top: 50px;
+    }
+
+    /* DESKTOP STYLES */
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 250px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">home</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">Java</a>
+    <a href="#">Python</a>
+    <a href="#">NodeJS</a>
+    <a href="#">PHP</a>
+    <a href="#">React</a>
+    <a href="#">More</a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+   <a href="c cons.html">C </a>
+  <br>
+      <a href="index.html">HOME</a>
+      <a href="#int">C Introduction</a>
+        <a href="c array.html">C array</a>
+        <a href="c cons.html">constractor</a>
+        <a href="c data.html">c data type</a>
+        <a href="c fans.html">Functions</a>
+        <a href="c loop.html">c loop</a>
+        <a href="c operator.html">c operator</a>
+        <a href="c syntex.html">c syntex</a>
+        <a href="c operator.html">c pointer</a>
+        <a href="cstring.html">c string</a>
+        <a href="cvarable.html">c variable</a>
+        <a href="react.html"></a>
+
+         <a href="java.html"></a>
+        <a href="nodejs.html">n</a>
+        <a href="php.html">j</a>
+        <a href="python.html">p</a>
+        <a href="react.html">re</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+     <h1>🧩 Understanding Pointers in C
+</h1>
+<br>
+<h2>1. What is a Pointer?</h2>
+<p>A pointer is a variable that stores the memory address of another variable. It</p>
+<p>allows for indirect access to the value stored at that address.</p>
+<br>
+<h1>2. Pointer Declaration</h1>
+<p>To declare a pointer, use the * symbol:</p>
+<pre><code>
+    int *ptr;
+
+</code></pre>
+<h2>This means ptr is a pointer to an integer.</h2>
+<br>
+<br>
+<h1>3. Dereferencing a Pointer</h1>
+<p>Dereferencing a pointer means accessing the value at the memory address it points to:</p>
+<pre><code>
+    int value = *ptr;
+
+</code></pre>
+<br>
+<br>
+<h1>4. Address-of Operator (&)</h1>
+<p>The & operator is used to get the address of a variable:</p>
+<pre><code>
+    ptr = &value;
+
+</code></pre>
+<br>
+<h1>5. NULL Pointer</h1>
+<p>A NULL pointer is a pointer that doesn't point to any valid memory location. It's</p>
+<p>often used to indicate that the pointer is not initialized or that it points to nothing.</p>
+<br>
+<h1>6. Void Pointer</h1>
+<p>A void pointer (void *) is a generic pointer that can point to any data type. It</p>
+<p>must be cast to another pointer type before dereferencing.</p>
+<br>
+<h1>7. Function Pointer</h1>
+<p>A function pointer stores the address of a function and can be used to call the function indirectly.</p>
+ <br>
+ <h1>8. Pointer to Pointer</h1>
+ <p>A pointer to a pointer is a variable that stores the address of another pointer:</p>
+ <pre><code>
+    int **ptr;
+
+ </code></pre>
+ <br>
+ <h1>9. Pointer Arithmetic</h1>
+ <p>Pointer arithmetic allows you to perform operations like incrementing or</p>
+ <p>decrementing pointers, which moves the pointer by the size of the data type it points to.</p>
+<br>
+<h1>10. Dynamic Memory Allocation</h1>
+<p>Functions like malloc(), calloc(), and free() are used for dynamic memory allocation and deallocation.</p>
+
+
+
+
+    <!-- Calculator Menu --
+    <div class="calculator-menu">
+      <ul>
+        <li><a href="gst.html">1 GST Calculator</a></li>
+        <li><a href="emi.html">2 EMI Calculator</a></li>
+        <li><a href="bmi.html">3 BMI Calculator</a></li>
+        <li><a href="sip.html">4 SIP Calculator</a></li>
+        <li><a href="age.html">5 Age Calculator</a></li>
+        <li><a href="per.html">6 Percentage Calculator</a></li>
+        <li><a href="dis.html">7 Discount Calculator</a></li>
+      </ul>
+    </div>-->
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <!-- JS --
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>-->
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+
+</body>
+</html>

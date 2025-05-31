@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCAHUB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+    }
+
+    .main {
+      padding: 20px;
+      margin-top: 130px;
+    }
+
+    pre code {
+      background-color: #333;
+      color: #f1f1f1;
+      display: block;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 160px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">Home</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">Java</a>
+    <a href="#">Python</a>
+    <a href="#">NodeJS</a>
+    <a href="#">PHP</a>
+    <a href="#">React</a>
+    <a href="#">More</a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="c cons.html">C</a>
+    <a href="#int">Introduction</a>
+    <a href="c array.html">Array</a>
+    <a href="c cons.html">Constructor</a>
+    <a href="c data.html">Data Type</a>
+    <a href="c fans.html">Functions</a>
+    <a href="c loop.html">Loop</a>
+    <a href="c operator.html">Operators</a>
+    <a href="c syntex.html">Syntax</a>
+    <a href="c operator.html">Pointer</a>
+    <a href="cstring.html">String</a>
+    <a href="cvarable.html">Variable</a>
+    <a href="nodejs.html">NodeJS</a>
+    <a href="php.html">PHP</a>
+    <a href="python.html">Python</a>
+    <a href="react.html">React</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <h1>Welcome to BCA-HUB</h1>
+     <h1>Data Types</h1>
+    <br>
+   <p>As explained in the Variables chapter, a variable in C must be a specified data type, and you must use a format specifier inside the printf() function to display it:</p>
+   <br>
+   <pre style="background-color: #333; color: #f1f1f1; overflow-x: auto; "><Code>
+    <h2>Example</h2>
+    // Create variables
+ int myNum = 5;             // Integer (whole number)
+ float myFloatNum = 5.99;   // Floating point number
+ char myLetter = 'D';       // Character
+
+ // Print variables
+ printf("%d\n", myNum);
+ printf("%f\n", myFloatNum);
+ printf("%c\n", myLetter);
+
+   </Code></pre>
+<br>
+   <h1>Basic Data Types</h1>
+   <br>
+   <p>The data type specifies the size and type of information the variable will store.</p>
+   <br>
+   <p>In this tutorial, we will focus on the most basic ones:</p>
+<br>
+   <pre style="background-color: #333; color: #f1f1f1;"><code>
+   Data   	 Size	            Description                                                 Example
+    Type
+   
+    int	        2 or 4 	         Stores whole numbers,      	                                   1
+                bytes            without decimals
+   
+   float	4 bytes	         Stores fractional numbers, containing one or more decimals.	  1.99
+                                 Sufficient for storing 6-7 decimal digits
+   
+   double	8 bytes          Stores fractional numbers,	                                   1.99
+                                 containing one or more decimals. 
+                                 Sufficient for storing 15 decimal digits
+   
+    char	1 byte	         Stores a single character/letter/number, or ASCII values	    'A'
+
+
+   </code></pre>
+     <h1>Basic Format Specifiers</h1>
+     <br>
+   <p>There are different format specifiers for each data type. Here are some of them:</p>
+  <br>
+  <pre style="background-color: #333; color: #f1f1f1;"><code>
+  Format Specifier      data type
+  %d or %i	           int	
+  %f or %F	           float	
+  %lf	                   double	
+  %c	                   char
+  %s
+  </code></pre>
+  <br>
+  <p><b>Note:</b> It is important that you use the correct format specifier for the specified data type. If not, the program may produce errors or even crash.</p>
+      <br>
+      <br>
+      <h1 id="character">Character Data Types</h1>
+      <br>
+      <h3>The char Type</h3>
+      <br>
+      <p>The char data type is used to store a single character.</p>
+      <p>The character must be surrounded by single quotes, like 'A' or 'c', and we use the %c format specifier to print it:</p>
+      <br>
+      <pre style="background-color: #333; color: #f1f1f1;"><code>
+        <h2>Example</h2>
+        char myGrade = 'A';
+    printf("%c", myGrade);
+      </code></pre>
+      <br>
+      <p>Alternatively, if you are familiar with ASCII, you can use ASCII values to display certain characters. Note that these values are not surrounded by quotes (''), as they are numbers:</p>
+      <br>
+      <pre style="background-color: #333; color: #f1f1f1;"><code>
+        <h2>Example</h2>
+        char a = 65, b = 66, c = 67;
+  printf("%c", a);
+  printf("%c", b);
+  printf("%c", c);
+      </code></pre>
+      <br>
+      <p>Tip: A list of all ASCII values can be found in our ASCII Table Reference.</p>
+       <br>
+       <h2>Notes on Characters</h2>
+       <br>
+       <p>If you try to store more than a single character, it will only print the last character:</p>
+   <br>
+       <pre style="background-color: #333; color: #f1f1f1;"><code>
+        <h2>Example</h2>
+        char myText = 'Hello';
+  printf("%c", myText);
+       </code></pre>
+       <br>
+       <p>Note: Don't use the char type for storing multiple characters, as it may produce errors.</p>
+       <br>
+       <br>
+       <p>To store multiple characters (or whole words), use strings (which you will learn more about in a later chapter):</p>
+       <br>
+       <pre style="background-color: #333; color: #f1f1f1;"><code>
+        <h2>Example</h2>
+        char myText[] = "Hello";
+   printf("%s", myText);
+       </code></pre>
+       <br>
+       <p>For now, just know that we use strings for storing multiple characters/text, and the char type for single characters.</p>
+  
+  <br>
+  <br>
+  <h1 id="numeric">Numeric Types</h1>
+  <br>
+  <p>Use int when you need to store a whole number without decimals, like 35 or 1000, and float or double when you need a floating point number (with decimals), like 9.99 or 3.14515.</p>
+  <br>
+  <pre style="background-color: #333; color: #f1f1f1;"><code>
+    <h2>int</h2>
+    int myNum = 1000;
+   printf("%d", myNum);
+  </code></pre>
+  <br>
+  <br>
+  <pre style="background-color: #333; color: #f1f1f1;"><code>
+    <h2>  float</h2>
+    float myNum = 5.75;
+    printf("%f", myNum);
+  </code></pre>
+  <br>
+  <br>
+  <pre style="background-color: #333; color: #f1f1f1;"><code>
+    <h2>double</h2>
+    double myNum = 19.99;
+    printf("%lf", myNum);
+  </code></pre>
+  <br>
+  <br>
+  <h2>float vs. double</h2>
+  <br>
+  <p>The precision of a floating point value indicates how many digits the value</p>
+  <br>
+  <p>can have after the decimal point. The precision of float is six or seven</p>
+  <br>
+  <p>decimal digits, while double variables have a precision of about 15 digits.</p>
+  <br>
+  <p>Therefore, it is often safer to use double for most calculations - but note</p>
+  
+  <br><p>that it takes up twice as much memory as float (8 bytes vs. 4 bytes).</p>
+  <br>
+  <h2>Scientific Numbers</h2>
+  <br>
+  <p>A floating point number can also be a scientific number with an "e" to indicate the power of 10:</p>
+  <pre style="background-color: #333; color: #f1f1f1;"><code>
+    <h2>Example</h2>
+    float f1 = 35e3;
+  double d1 = 12E4;
+
+   printf("%f\n", f1);
+   printf("%lf", d1);
+  </code></pre>
+
+  <br>
+  <br>
+  <h1 id="Set Decimal Precision">Set Decimal Precision</h1>
+  <br>
+  <p>You have probably already noticed that if you print a floating point number, the output will show many digits after the decimal point:</p>
+  <br> 
+  <pre style="background-color: #333; color: #f1f1f1;"><code>
+    <h2>Example</h2>
+    float myFloatNum = 3.5;
+   double myDoubleNum = 19.99;
+
+  printf("%f\n", myFloatNum); // Outputs 3.500000
+  printf("%lf", myDoubleNum); // Outputs 19.990000
+
+  </code></pre>
+  <br>
+  <p>If you want to remove the extra zeros (set decimal precision), you can use a dot (.) followed by a number that specifies how many digits that should be shown after the decimal point:</p>
+  <br>
+  <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>Example</h2>
+    float myFloatNum = 3.5;
+
+  printf("%f\n", myFloatNum);   // Default will show 6 digits after the decimal point
+  printf("%.1f\n", myFloatNum); // Only show 1 digit
+  printf("%.2f\n", myFloatNum); // Only show 2 digits
+  printf("%.4f", myFloatNum);   // Only show 4 digits
+  </code></pre>
+  <br>
+  <br>
+  <h1 id="Real-Life">Real-Life Example</h1>
+  <br>
+  <p>Here's a real-life example of using different data types, to calculate and output the total cost of a number of items:</p>
+
+  <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>example</h2>
+    // Create variables of different data types
+  int items = 50;
+  float cost_per_item = 9.99;
+  float total_cost = items * cost_per_item;
+  char currency = '$';
+
+  // Print variables
+  printf("Number of items: %d\n", items);
+  printf("Cost per item: %.2f %c\n", cost_per_item, currency);
+   printf("Total cost = %.2f %c\n", total_cost, currency);
+  </code></pre>
+
+  <br>
+  <br>
+  <h1 id="Type Conversion">Type Conversion</h1>
+  <br>
+  <p>Sometimes, you have to convert the value of one data type to another type. This is known as type conversion.</p>
+
+  <p>For example, if you try to divide two integers, 5 by 2, you would expect the result to be 2.5. But since we are working with integers (and not floating-point values), the following example will just output 2:</p>
+
+<br>
+  <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>example</h2>
+    int x = 5;
+  int y = 2;
+  int sum = 5 / 2;
+
+   printf("%d", sum); // Outputs 2
+</code></pre>
+<br>
+<p>To get the right result, you need to know how type conversion works.</p>
+<br>
+<p>There are two types of conversion in C:</p>
+<p>. Implicit Conversion (automatically)</p>
+<p>.Explicit Conversion (manually)</p>
+<br>
+<br>
+<h2>Implicit Conversion</h2>
+<p>Implicit conversion is done automatically by the compiler when you assign a value of one type to another.</p>
+<p>For example, if you assign an int value to a float type:</p>
+
+
+<pre style="background-color: #333;color: #f1f1f1;"><code>
+  <h2>example</h2>
+  // Automatic conversion: int to float
+ float myFloat = 9;
+
+ printf("%f", myFloat); // 9.000000
+</code></pre>
+<br>
+<p>As you can see, the compiler automatically converts the int value 9 to a float value of 9.000000.</p>
+<br>
+<p>This can be risky, as you might lose control over specific values in certain situations.</p>
+
+<br>
+<p>Especially if it was the other way around - the following example automatically converts the float value 9.99 to an int value of 9:</p>
+
+<pre style="background-color: #333;color: #f1f1f1;"><code>
+  <h2>example</h2>
+  // Automatic conversion: float to int
+ int myInt = 9.99;
+
+ printf("%d", myInt); // 9
+
+</code></pre>
+<br>
+<p>What happened to .99? We might want that data in our program! So be careful. It is important that you know how the compiler work in these situations, to avoid unexpected results.</p>
+<br>
+<p>As another example, if you divide two integers: 5 by 2, you know that the</p>
+<p>sum is 2.5. And as you know from the beginning of this page, if you store</p>
+<p>the sum as an integer, the result will only display the number 2. Therefore,</p>
+<p>it would be better to store the sum as a float or a double, right?</p>
+<br>
+<pre style="background-color: #333;color: #f1f1f1;"><code>
+  <h2>example</h2>
+  float sum = 5 / 2;
+
+printf("%f", sum); // 2.000000
+</code></pre>
+<br>
+<p>Why is the result 2.00000 and not 2.5? Well, it is because 5 and 2 are still</p>
+<p>integers in the division. In this case, you need to manually convert the</p>
+<p>integer values to floating-point values. (see below).</p>
+<br>
+<br>
+<h2>Explicit Conversion</h2>
+<br>
+<p>Explicit conversion is done manually by placing the type in parentheses () in front of the value.</p>
+<br>
+<p>Considering our problem from the example above, we can now get the right result:</p>
+<pre style="background-color: #333;color: #f1f1f1;"><code>
+  <h2>example</h2>
+  // Manual conversion: int to float
+ float sum = (float) 5 / 2;
+
+ printf("%f", sum); // 2.500000
+
+</code></pre>
+<br>
+<p>You can also place the type in front of a variable:</p>
+<br>
+<pre style="background-color: #333;color: #f1f1f1;"><code>
+  <h2>example</h2>
+  int num1 = 5;
+ int num2 = 2;
+ float sum = (float) num1 / num2;
+
+ printf("%f", sum); // 2.500000
+</code></pre>
+<br>
+<p>And since you learned about "decimal precision" in the previous chapter, you</p>
+<p>could make the output even cleaner by removing the extra zeros (if you like):</p>
+<br>
+<pre style="background-color: #333;color: #f1f1f1;"><code>
+  <h2>example</h2>
+  int num1 = 5;
+  int num2 = 2;
+  float sum = (float) num1 / num2;
+
+  printf("%.1f", sum); // 2.5
+
+</code></pre>
+
+<br>
+<br>
+<h2>
+Real-Life Example</h2>
+<p>Here's a real-life example of data types and type conversion where we</p>
+<p>create a program to calculate the percentage of a user's score in</p>
+<p>relation to the maximum score in a game:</p>
+<br>
+<br>
+<pre style="background-color: #333;color: #f1f1f1;"><code>
+  <h2>example</h2>
+  // Set the maximum possible score in the game to 500
+int maxScore = 500;
+
+// The actual score of the user
+int userScore = 423;
+
+/* Calculate the percantage of the user's score in relation to the maximum available score.
+Convert userScore to float to make sure that the division is accurate */
+float percentage = (float) userScore / maxScore * 100.0;
+
+// Print the percentage
+printf("User's percentage is %.2f", percentage);
+
+</code></pre>
+              
+
+   
+  </div>
+
+  <!-- FOOTER --
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>-->
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>

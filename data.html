@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCAHUB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    /* SCROLLABLE LINKS */
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-left: 0;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      padding: 20px;
+      margin-top: 130px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #0073e6;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    /* CALCULATOR MENU *
+    .calculator-menu {
+      background-color: #fff;
+      height: 350px;
+      width: 350px;
+      border: none;
+      margin-left: 20px;
+      padding: 20px;
+      overflow-y: auto;
+      cursor: default;
+    }
+
+    .calculator-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .calculator-menu li a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      margin: 5px 0;
+      transition: color 0.2s;
+    }
+
+    .calculator-menu li a:hover {
+      color: #007BFF;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      
+      margin-top: 50px;
+    }
+
+    /* DESKTOP STYLES */
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 250px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">home</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">Java</a>
+    <a href="#">Python</a>
+    <a href="#">NodeJS</a>
+    <a href="#">PHP</a>
+    <a href="#">React</a>
+    <a href="#">More</a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+     <a href="c cons.html">C </a>
+  <br>
+      <a href="index.html">HOME</a>
+      <a href="ccc.html">C++ mcq</a>
+        
+        <a href="data.html">data structure</a>
+        <a href="dbms.html">DBMS Quiz</a>
+        <a href="netw.html">Networking Quiz</a>
+        <a href="os.html">OS Quiz</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+   
+    <br>
+
+
+    <!-- Calculator Menu --
+    <div class="calculator-menu">
+      <ul>
+        <li><a href="gst.html">1 GST Calculator</a></li>
+        <li><a href="emi.html">2 EMI Calculator</a></li>
+        <li><a href="bmi.html">3 BMI Calculator</a></li>
+        <li><a href="sip.html">4 SIP Calculator</a></li>
+        <li><a href="age.html">5 Age Calculator</a></li>
+        <li><a href="per.html">6 Percentage Calculator</a></li>
+        <li><a href="dis.html">7 Discount Calculator</a></li>
+      </ul>
+    </div>-->
+
+ <div class="quiz-container">
+    <h1>📊 Data Structures Quiz</h1>
+    <div id="question-box">
+      <p id="question-text">Loading question...</p>
+      <div id="options"></div>
+    </div>
+    <button id="next-btn" onclick="loadNextQuestion()">Next</button>
+    <p id="score-box"></p>
+  </div>
+
+
+  </div>
+  <style>
+    .quiz-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#question-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #e7e7e7;
+}
+
+button:hover {
+  background-color: #d4d4d4;
+}
+
+#next-btn {
+  background-color: #4CAF50;
+  color: white;
+  display: none;
+}
+
+.correct {
+  background-color: #c8e6c9;
+}
+
+.wrong {
+  background-color: #ffcdd2;
+}
+
+#score-box {
+  font-size: 18px;
+  margin-top: 20px;
+}
+  </style>
+  <script>
+   const questions = [
+  {
+    question: "Which data structure uses LIFO (Last In, First Out)?",
+    options: ["Queue", "Stack", "Array", "Tree"],
+    answer: 1
+  },
+  {
+    question: "Which of these is a linear data structure?",
+    options: ["Graph", "Tree", "Array", "Hash Table"],
+    answer: 2
+  },
+  {
+    question: "What is the worst-case time complexity of binary search?",
+    options: ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+    answer: 1
+  },
+  {
+    question: "Which data structure uses FIFO (First In, First Out)?",
+    options: ["Queue", "Stack", "Heap", "Graph"],
+    answer: 0
+  },
+  {
+    question: "Which is not a self-balancing binary search tree?",
+    options: ["AVL Tree", "Red-Black Tree", "B-Tree", "Binary Heap"],
+    answer: 3
+  },
+  {
+    question: "Which traversal gives nodes in sorted order in a BST?",
+    options: ["Preorder", "Inorder", "Postorder", "Level Order"],
+    answer: 1
+  },
+  {
+    question: "A hash function maps keys to:",
+    options: ["Arrays", "Indices", "Stacks", "Graphs"],
+    answer: 1
+  },
+  {
+    question: "Which operation is costly in singly linked list?",
+    options: ["Insertion at front", "Insertion at end", "Deletion at front", "Traversal"],
+    answer: 1
+  },
+  {
+    question: "What does ‘push’ operation do in a stack?",
+    options: ["Removes element", "Adds element", "Sorts elements", "Swaps elements"],
+    answer: 1
+  },
+  {
+    question: "Which data structure is used in recursion?",
+    options: ["Queue", "Stack", "Array", "Graph"],
+    answer: 1
+  },
+  {
+    question: "What is the height of a complete binary tree with n nodes?",
+    options: ["log n", "n", "n/2", "n log n"],
+    answer: 0
+  },
+  {
+    question: "In which data structure insertion and deletion happen at both ends?",
+    options: ["Deque", "Stack", "Queue", "Array"],
+    answer: 0
+  },
+  {
+    question: "Which of the following is a non-linear data structure?",
+    options: ["Linked List", "Stack", "Queue", "Tree"],
+    answer: 3
+  },
+  {
+    question: "Which data structure is best for implementing priority queues?",
+    options: ["Stack", "Heap", "Queue", "Array"],
+    answer: 1
+  },
+  {
+    question: "What is the time complexity for searching in a hash table?",
+    options: ["O(1)", "O(n)", "O(log n)", "O(n log n)"],
+    answer: 0
+  },
+  {
+    question: "Which data structure is used in BFS (Breadth First Search)?",
+    options: ["Stack", "Queue", "Tree", "Array"],
+    answer: 1
+  },
+  {
+    question: "A circular queue is useful to:",
+    options: [
+      "Save space and avoid overflow",
+      "Use array memory fully",
+      "Avoid shifting elements",
+      "All of the above"
+    ],
+    answer: 3
+  },
+  {
+    question: "Which operation is not possible in singly linked list efficiently?",
+    options: ["Insertion at front", "Traversal", "Insertion after node", "Backwards traversal"],
+    answer: 3
+  },
+  {
+    question: "Which sorting algorithm is best for nearly sorted data?",
+    options: ["Quick Sort", "Merge Sort", "Bubble Sort", "Insertion Sort"],
+    answer: 3
+  },
+  {
+    question: "Which of the following is not a sorting algorithm?",
+    options: ["Quick Sort", "Merge Sort", "DFS", "Heap Sort"],
+    answer: 2
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+  const q = questions[currentQuestion];
+  document.getElementById("question-text").innerText = `Q${currentQuestion + 1}: ${q.question}`;
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
+
+  q.options.forEach((opt, index) => {
+    const btn = document.createElement("button");
+    btn.innerText = opt;
+    btn.onclick = () => checkAnswer(index, btn);
+    optionsDiv.appendChild(btn);
+  });
+  document.getElementById("next-btn").style.display = "none";
+}
+
+function checkAnswer(selected, btn) {
+  const correct = questions[currentQuestion].answer;
+  const allButtons = document.querySelectorAll("#options button");
+
+  allButtons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === correct) b.classList.add("correct");
+    if (i === selected && i !== correct) b.classList.add("wrong");
+  });
+
+  if (selected === correct) score++;
+  document.getElementById("next-btn").style.display = "inline-block";
+}
+
+function loadNextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < questions.length) {
+    loadQuestion();
+  } else {
+    showFinalScore();
+  }
+}
+
+function showFinalScore() {
+  document.getElementById("question-box").innerHTML = `<h2>🎉 Quiz Completed!</h2><p>You scored ${score} out of ${questions.length}.</p>`;
+  document.getElementById("next-btn").style.display = "none";
+}
+
+window.onload = loadQuestion;
+
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <!-- JS --
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>-->
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+
+</body>
+</html>

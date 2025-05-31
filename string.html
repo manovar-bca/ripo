@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCAHUB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+    }
+
+    .main {
+      padding: 40px;
+      margin-top: 130px;
+    }
+    li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+    pre  {
+      background-color: #333;
+      color: #f1f1f1;
+      display: block;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 160px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">Home</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">Java</a>
+    <a href="#">Python</a>
+    <a href="#">NodeJS</a>
+    <a href="#">PHP</a>
+    <a href="#">React</a>
+    <a href="#">More</a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <a href="../index.html">Home</a>
+    <a href="../index.html">Home</a>
+    <a href="c cons.html">C</a>
+    <a href="#int">Introduction</a>
+    <a href="c array.html">Array</a>
+    <a href="c cons.html">Constructor</a>
+    <a href="c data.html">Data Type</a>
+    <a href="c fans.html">Functions</a>
+    <a href="c loop.html">Loop</a>
+    <a href="c operator.html">Operators</a>
+    <a href="c syntex.html">Syntax</a>
+    <a href="c operator.html">Pointer</a>
+    <a href="cstring.html">String</a>
+    <a href="cvarable.html">Variable</a>
+    <a href="nodejs.html">NodeJS</a>
+    <a href="php.html">PHP</a>
+    <a href="python.html">Python</a>
+    <a href="react.html">React</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <h1>Java Strings</h1>
+    <br>
+    <p>Strings are used for storing text.</p>
+   <br>
+   <p>A String variable contains a collection of characters surrounded by double quotes:</p>
+<br>
+<pre>
+    <h2>example</h2>
+    <h3>Create a variable of type String and assign it a value:</h3>
+
+    String greeting = "Hello";
+
+
+</pre>
+<br>
+<br>
+<h1>String Length</h1>
+<br>
+<p>A String in Java is actually an object, which contain methods that can perform certain operations on strings. For example, the length of a string can be found with the length() method:</p>
+<br>
+<pre>
+    <h2>Example</h2>
+
+    String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+System.out.println("The length of the txt string is: " + txt.length());
+
+
+
+</pre>
+<br>
+<br>
+<h1>More String Methods</h1>
+<br>
+<p>There are many string methods available, for example toUpperCase() and toLowerCase():</p>
+  <br>
+  <pre>
+    <h2>Example</h2>
+
+    String txt = "Hello World";
+System.out.println(txt.toUpperCase());   // Outputs "HELLO WORLD"
+System.out.println(txt.toLowerCase());   // Outputs "hello world"
+
+
+  </pre>
+  <br>
+  <br>
+  <h1>Finding a Character in a String</h1>
+  <br>
+  <p>The indexOf() method returns the index (the position) of the first occurrence of a specified text in a string (including whitespace):</p>
+<br>
+<pre>
+    <h2>Example</h2>
+
+    String txt = "Please locate where 'locate' occurs!";
+System.out.println(txt.indexOf("locate")); // Outputs 7
+
+
+</pre>
+<br>
+<p>Java counts positions from zero.
+0 is the first position in a string, 1 is the second, 2 is the third ...</p>
+
+
+
+
+
+</div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <script>
+   /* function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }*/
+
+   
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>

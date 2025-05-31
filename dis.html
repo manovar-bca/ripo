@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCAHUB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    /* SCROLLABLE LINKS */
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-left: 0;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      padding: 20px;
+      margin-top: 130px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #0073e6;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    /* CALCULATOR MENU */
+    .calculator-menu {
+      background-color: #fff;
+      height: 350px;
+      width: 510px;
+      border: none;
+      margin-left: 10px;
+      padding: 30px;
+      font-size: 20px;
+      overflow-y: auto;
+      cursor: default;
+    }
+
+    .calculator-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .calculator-menu li a {
+      display: block;
+      text-decoration: none;
+       color: brown;
+      margin: 5px 0;
+      transition: color 0.2s;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .calculator-menu li a:hover {
+     color: brown;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      
+      margin-top: 50px;
+    }
+
+    /* DESKTOP STYLES */
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 250px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">home</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">Java</a>
+    <a href="#">Python</a>
+    <a href="#">NodeJS</a>
+    <a href="#">PHP</a>
+    <a href="#">React</a>
+    <a href="#">More</a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+   <a href="c cons.html">C </a>
+  <br>
+           <a href="index.html">HOME</a>
+      <a href="gst.html">GST CALCULATOR</a>
+        <a href="emi.html">EMI CALCULATOR</a>
+        <a href="bmi.html">BMI CALCULATOR</a>
+        <a href="sip.html">SIP CALCULATOR</a>
+        <a href="age.html">AGE CALCULATOR</a>
+        <a href="per.html">Percentage CALCULATOR</a>
+        <a href="dis.html">Discount CALCULATOR</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+          <h1 style="background-color: cornflowerblue; text-align: center; font-size: 40px;">BCA-HUB</h1>
+          <!-- Discount Calculator -->
+  <section class="calc-section">
+    <h2 id="dis">7 Discount Calculator</h2>
+    <p>The Discount Calculator helps you determine the amount saved and the final price after a discount is applied. It's perfect for shopping and comparing offers.
+
+</p>
+    <input type="number" id="originalPrice" placeholder="Original Price (₹)">
+    <input type="number" id="discountRate" placeholder="Discount (%)">
+    <button onclick="calculateDiscount()">Calculate</button>
+    <div id="discountResult"></div>
+  </section>
+    <br>
+   
+
+    <!-- Calculator Menu -->
+     
+ <div class="calculator-menu">
+    <h1 style="background-color: darkgoldenrod;">Our Calculator Tools</h1>
+    <br>
+      <ul>
+        <li><a href="gst.html">1 GST Calculator</a></li>
+        <li><a href="emi.html">2 EMI Calculator</a></li>
+        <li><a href="bmi.html">3 BMI Calculator</a></li>
+        <li><a href="sip.html">4 SIP Calculator</a></li>
+        <li><a href="age.html">5 Age Calculator</a></li>
+        <li><a href="per.html">6 Percentage Calculator</a></li>
+        <li><a href="dis.html">7 Discount Calculator</a></li>
+      </ul>
+    </div>
+    <br>
+<br>
+
+
+
+       <style>
+            .calc-section {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+.calc-section h2 {
+  margin-bottom: 15px;
+}
+.calc-section input, .calc-section select, .calc-section button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+}
+.calc-section button {
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.calc-section button:hover {
+  background-color: #005bb5;
+}
+
+        </style>
+
+
+</div>
+
+    
+
+<script>function calculateDiscount() {
+  let original = parseFloat(document.getElementById("originalPrice").value);
+  let discount = parseFloat(document.getElementById("discountRate").value);
+  if (isNaN(original) || isNaN(discount)) return document.getElementById("discountResult").innerText = "Invalid input";
+  let discountAmount = original * discount / 100;
+  let finalPrice = original - discountAmount;
+  document.getElementById("discountResult").innerHTML = `Discount: ₹${discountAmount.toFixed(2)}<br>Final Price: ₹${finalPrice.toFixed(2)}`;
+}</script>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <!-- JS --
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>-->
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+
+</body>
+</html>

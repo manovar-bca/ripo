@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCAHUB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    /* SCROLLABLE LINKS */
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-left: 0;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      padding: 20px;
+      margin-top: 130px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #0073e6;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    
+    pre code {
+      background-color: #333;
+      color: #f1f1f1;
+      display: block;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+
+    /* CALCULATOR MENU *
+    .calculator-menu {
+      background-color: #fff;
+      height: 350px;
+      width: 350px;
+      border: none;
+      margin-left: 20px;
+      padding: 20px;
+      overflow-y: auto;
+      cursor: default;
+    }
+
+    .calculator-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .calculator-menu li a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      margin: 5px 0;
+      transition: color 0.2s;
+    }
+
+    .calculator-menu li a:hover {
+      color: #007BFF;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      
+      margin-top: 50px;
+    }
+
+    /* DESKTOP STYLES */
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 250px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">home</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">Java</a>
+    <a href="#">Python</a>
+    <a href="#">NodeJS</a>
+    <a href="#">PHP</a>
+    <a href="#">React</a>
+    <a href="#">More</a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+<a href="c cons.html">C </a>
+  <br>
+      <a href="index.html">HOME</a>
+      <a href="#int">C Introduction</a>
+        <a href="c array.html">C array</a>
+        <a href="c cons.html">constractor</a>
+        <a href="c data.html">c data type</a>
+        <a href="c fans.html">Functions</a>
+        <a href="c loop.html">c loop</a>
+        <a href="c operator.html">c operator</a>
+        <a href="c syntex.html">c syntex</a>
+        <a href="c operator.html">c pointer</a>
+        <a href="cstring.html">c string</a>
+        <a href="cvarable.html">c variable</a>
+        <a href="react.html"></a>
+
+         <a href="java.html"></a>
+        <a href="nodejs.html">n</a>
+        <a href="php.html">j</a>
+        <a href="python.html">p</a>
+        <a href="react.html">re</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    
+    <br>
+     <h1>🧩 While Loop</h1>
+<br>
+<h2">Loops</h2>
+<br>
+<p>Loops can execute a block of code as long as a specified condition is reached.</p>
+ <br>
+<p>Loops are handy because they save time, reduce errors, and they make code more readable.</p>
+ <br>
+<h2>While Loop</h2>
+<br>
+  <p>The while loop loops through a block of code as long as a specified condition is true:</p>
+<br>
+  <h2>Syntax</h2>
+<br>
+  <h5>while (condition) {</h5>
+    <br>
+    <h6>// code block to be executed
+    }
+    </h6>
+    <br>
+    <p>In the example below, the code in the loop will run, over and over again, as long as a variable (i) is less than 5:</p>
+
+   
+    <pre style="background-color: #333; color: #f1f1f1;"><code>
+         <h2>Example</h2>
+        int i = 0;
+
+  while (i < 5) {
+    printf("%d\n", i);
+   i++;
+  }
+    </code></pre>
+    <br>
+    <p>Note: Do not forget to increase the variable used in the condition (i++), otherwise the loop will never end!</p>
+
+<br>
+<br>
+  <h1 id="Do/While Loop"> Do/While Loop</h1>
+
+  <br>
+  <h2>The Do/While Loop</h2>
+  <br>
+  <p>The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.</p>
+  <br>
+  <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>syntex</h2>
+    do {
+   // code block to be executed
+  }
+  while (condition);
+  </code></pre>
+  <br>
+  <br>
+  <p>The example below uses a do/while loop. The loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:</p>
+ <br>
+  <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>Example</h2>
+    int i = 0;
+
+  do {
+  printf("%d\n", i);
+  i++;
+  }
+  while (i < 5);
+  </code></pre>
+  <br>
+  <p>Do not forget to increase the variable used in the condition, otherwise the loop will never end!</p>
+ 
+ <br>
+ <br>
+ <h1> While Loop Examples</h1>
+ <br>
+ <p>Real-Life Examples</p>
+ <br>
+ <p>To demonstrate a practical example of the while loop, we have created a simple "countdown" program:</p>
+ <br>
+ <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>Example</h2>
+
+    int countdown = 3;
+
+  while (countdown > 0) {
+  printf("%d\n", countdown);
+  countdown--;
+  }
+
+   printf("Happy New Year!!\n");
+ </code></pre>
+ <br>
+ <br>
+  <p>In this example, we create a program that only print even numbers between 0 and 10 (inclusive):</p>
+ <br>
+  <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>example</h2>
+    int i = 0;
+
+  while (i <= 10) {
+  printf("%d\n", i);
+  i += 2;
+  }
+ </code></pre>
+ <br>
+ <br>
+ <p>In this example we use a while loop to reverse some numbers:</p>
+ <br>
+ <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>example</h2>
+    // A variable with some specific numbers
+  int numbers = 12345;
+
+  // A variable to store the reversed number
+  int revNumbers = 0;
+
+  // Reverse and reorder the numbers
+  while (numbers) {
+   // Get the last number of 'numbers' and add it to 'revNumber'
+   revNumbers = revNumbers * 10 + numbers % 10;
+   // Remove the last number of 'numbers'
+   numbers /= 10;
+   }
+
+ </code></pre>
+ <br>
+ <br>
+ <p>To demonstrate a practical example of the while loop combined with an if else statement, let's say we play a game of Yatzy:</p>
+ <br>
+ <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>example</h2>
+    <p>Print "Yatzy!" If the dice number is 6:</p>
+    int dice = 1;
+
+  while (dice <= 6) {
+  if (dice < 6) {
+    printf("No Yatzy\n");
+  } else {
+    printf("Yatzy!\n");
+  }
+  dice = dice + 1;
+  }
+
+ </code></pre>
+ <br>
+ <p>If the loop passes the values ranging from 1 to 5, it prints "No Yatzy". Whenever it passes the value 6, it prints "Yatzy!".</p>
+ 
+  <br>
+  <br>
+  <h1 id="for loop"> For Loop</h1>
+  <br>
+  <p>When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:</p>
+ <br>
+ <pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>syntax</h2>
+    for (expression 1; expression 2; expression 3) {
+  // code block to be executed
+  }
+
+ </code></pre>
+ <br>
+ <p>Expression 1 is executed (one time) before the execution of the code block.</p>
+ <br>
+ <p>Expression 2 defines the condition for executing the code block.</p>
+ <br>
+ <p>Expression 3 is executed (every time) after the code block has been executed.</p>
+ <br>
+ <p>The example below will print the numbers 0 to 4:</p>
+ <br>
+<pre style="background-color: #333; color: #f1f1f1;"><code>
+    <h2>example</h2>
+    int i;
+
+  for (i = 0; i < 5; i++) {
+  printf("%d\n", i);
+  }
+
+</code></pre>
+<br>
+<br>
+<p>Example explained</p>
+<br>
+<p>Expression 1 sets a variable before the loop starts (int i = 0).</p>
+<br>
+<p>Expression 2 defines the condition for the loop to run (i must be less than 5). If the condition is true, the loop will start over again, if it is false, the loop will end.</p>
+<br>
+<p>Expression 3 increases a value (i++) each time the code block in the loop has been executed.</p>
+
+<br>
+<br>
+<h1>Nested Loops</h1>
+<br>
+<p>It is also possible to place a loop inside another loop. This is called a nested loop.</p>
+<br>
+<p>The "inner loop" will be executed one time for each iteration of the "outer loop":</p>
+ <br>
+<pre style="background-color: #333;color: #f1f1f1;"><code>
+    <h2>example</h2>
+    int i, j;
+
+  // Outer loop
+  for (i = 1; i <= 2; ++i) {
+  printf("Outer: %d\n", i);  // Executes 2 times
+
+  // Inner loop
+  for (j = 1; j <= 3; ++j) {
+    printf(" Inner: %d\n", j);  // Executes 6 times (2 * 3)
+    }
+  }
+
+</code></pre>
+
+                
+
+
+    <!-- Calculator Menu --
+    <div class="calculator-menu">
+      <ul>
+        <li><a href="gst.html">1 GST Calculator</a></li>
+        <li><a href="emi.html">2 EMI Calculator</a></li>
+        <li><a href="bmi.html">3 BMI Calculator</a></li>
+        <li><a href="sip.html">4 SIP Calculator</a></li>
+        <li><a href="age.html">5 Age Calculator</a></li>
+        <li><a href="per.html">6 Percentage Calculator</a></li>
+        <li><a href="dis.html">7 Discount Calculator</a></li>
+      </ul>
+    </div>-->
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <!-- JS --
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>-->
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+
+</body>
+</html>

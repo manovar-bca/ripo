@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCAHUB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+    }
+
+    .main {
+      padding: 40px;
+      margin-top: 130px;
+    }
+    li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+    pre code {
+      background-color: #333;
+      color: #f1f1f1;
+      display: block;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 160px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">Home</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">Java</a>
+    <a href="#">Python</a>
+    <a href="#">NodeJS</a>
+    <a href="#">PHP</a>
+    <a href="#">React</a>
+    <a href="#">More</a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <a href="../index.html">Home</a>
+    <a href="../index.html">Home</a>
+    <a href="c cons.html">C</a>
+    <a href="#int">Introduction</a>
+    <a href="c array.html">Array</a>
+    <a href="c cons.html">Constructor</a>
+    <a href="c data.html">Data Type</a>
+    <a href="c fans.html">Functions</a>
+    <a href="c loop.html">Loop</a>
+    <a href="c operator.html">Operators</a>
+    <a href="c syntex.html">Syntax</a>
+    <a href="c operator.html">Pointer</a>
+    <a href="cstring.html">String</a>
+    <a href="cvarable.html">Variable</a>
+    <a href="nodejs.html">NodeJS</a>
+    <a href="php.html">PHP</a>
+    <a href="python.html">Python</a>
+    <a href="react.html">React</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <h1>Java Data Types</h1>
+    <br>
+    <p>As explained in the previous chapter, a variable in Java must be a specified data type:</p>
+   <br>
+   <pre><code>
+    Example
+
+    int myNum = 5;               // Integer (whole number)
+float myFloatNum = 5.99f;    // Floating point number
+char myLetter = 'D';         // Character
+boolean myBool = true;       // Boolean
+String myText = "Hello";     // String
+
+   </code></pre>
+   <br>
+   <p>Data types are divided into two groups:</p>
+   <br>
+   <p>Primitive data types - includes<b style="color: darkred;">byte,</b> <b style="color: darkred;">short,</b> <b style="color: darkred;">int,</b> <b style="color: darkred;">long,</b> <b style="color: darkred;">float,</b> <b style="color: darkred;">double,</b> <b style="color: darkred;">boolean</b> and <b style="color: darkred;">char</b></p>
+<br>
+<p>Non-primitive data types - such as <b style="color: darkred;">String,</b style="color: darkred;"> Arrays and Classes (you will learn more about these in a later chapter)</p>
+<br>
+<h1>Primitive Data Types</h1>
+<p>A primitive data type specifies the type of a variable and the kind of values it can hold.</p>
+<br>
+<p>There are eight primitive data types in Java:</p>
+<br>
+<pre><code>
+Data Type     Description
+
+  byte	    Stores whole numbers from -128 to 127
+  short	    Stores whole numbers from -32,768 to 32,767
+  int	    Stores whole numbers from -2,147,483,648 to 2,147,483,647
+  long	    Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+  float	    Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+  double	   Stores fractional numbers. Sufficient for storing 15 to 16 decimal digits
+  boolean  	   Stores true or false values
+  char	    Stores a single character/letter or ASCII values
+
+</code></pre>
+<br>
+<br>
+<h1>
+    Java Numbers
+</h1>
+<br>
+<p>Primitive number types are divided into two groups:</p>
+<br>
+<p><b>Integer types</b> stores whole numbers, positive or negative (such as 123 or -456), without decimals. Valid types are <B style="color: darkred;">byte,</B> <b style="color: darkred;">short,</b> <b style="color: darkred;">int </b>and<b style="color: darkred;"> long.</b> Which type you should use, depends on the numeric value.</p>
+<br>
+<p><b>Floating point types</b> represents numbers with a fractional part, containing one or more decimals. There are two types: <b style="color: darkred;">float</b> and <b style="color: darkred;">double.</b></p>
+<br>
+<p>Even though there are many numeric types in Java, the most used for numbers are int (for whole numbers) and double (for floating point numbers). However, we will describe them all as you continue to read.</p>
+<br>
+<h2>Byte</h2>
+<br>
+<p>The <b style="color: darkred;">byte</b> data type can store whole numbers from -128 to 127. This can be used instead of <b style="color: darkred;">int</b> or other integer types to save memory when you are certain that the value will be within -128 and 127:</p>
+<br>
+<pre><code>
+    <h2>Example</h2>
+    byte myNum = 100;
+System.out.println(myNum);
+
+</code></pre>
+<br>
+<p>short</p>
+<br>
+<p>The short data type can store whole numbers from -32768 to 32767:</p>
+<br>
+<pre><code>
+    <h2>Example</h2>
+
+    short myNum = 5000;
+System.out.println(myNum);
+
+</code></pre>
+<br>
+<h2>Int</h2>
+<br>
+<p>The int data type can store whole numbers from -2147483648 to 2147483647. In general, and in our tutorial, the int data type is the preferred data type when we create variables with a numeric value.</p>
+
+<br>
+<pre><code>
+    <h2>Example</h2>
+
+
+    int myNum = 100000;
+System.out.println(myNum);
+
+
+</code></pre>
+<br>
+
+<h2>Long</h2>
+<br>
+<p>The long data type can store whole numbers from -9223372036854775808 to 9223372036854775807. This is used when int is not large enough to store the value. Note that you should end the value with an "L":</p>
+<br>
+<pre><code>
+    <h2>Example</h2>
+    long myNum = 15000000000L;
+System.out.println(myNum);
+
+</code></pre>
+<br>
+<h1>Floating Point Types</h1>
+<br>
+<p>You should use a floating point type whenever you need a number with a decimal, such as 9.99 or 3.14515.</p>
+<br>
+<p>The float and double data types can store fractional numbers. Note that you should end the value with an "f" for floats and "d" for doubles:</p>
+<pre>
+    <code>
+        <h2>Float Example</h2>
+
+
+        float myNum = 5.75f;
+System.out.println(myNum);
+
+
+    </code>
+</pre>
+
+<br>
+<h1>Double Example</h1>
+
+<pre><code>
+    double myNum = 19.99d;
+System.out.println(myNum);
+</code></pre>
+<br>
+<br>
+<p>Use float or double?</p>
+<br>
+<p>The precision of a floating point value indicates how many digits the value can have after the decimal point. The precision of float is only six or seven decimal digits, while double variables have a precision of about 16 digits. Therefore it is safer to use double for most calculations.</p>
+<br>
+<h1>Scientific Numbers</h1>
+<br>
+<p>A floating point number can also be a scientific number with an "e" to indicate the power of 10:</p>
+
+<br>
+<pre><code>
+    <h2>Example</h2>
+
+    float f1 = 35e3f;
+double d1 = 12E4d;
+System.out.println(f1);
+System.out.println(d1);
+
+
+</code></pre>
+
+
+
+
+
+
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <script>
+   /* function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }*/
+
+   
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCAHUB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    /* SCROLLABLE LINKS */
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-left: 0;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      padding: 20px;
+      margin-top: 130px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #0073e6;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    /* CALCULATOR MENU *
+    .calculator-menu {
+      background-color: #fff;
+      height: 350px;
+      width: 350px;
+      border: none;
+      margin-left: 20px;
+      padding: 20px;
+      overflow-y: auto;
+      cursor: default;
+    }
+
+    .calculator-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .calculator-menu li a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      margin: 5px 0;
+      transition: color 0.2s;
+    }
+
+    .calculator-menu li a:hover {
+      color: #007BFF;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      
+      margin-top: 50px;
+    }
+
+    /* DESKTOP STYLES */
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 250px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search..." />
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">home</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">Java</a>
+    <a href="#">Python</a>
+    <a href="#">NodeJS</a>
+    <a href="#">PHP</a>
+    <a href="#">React</a>
+    <a href="#">More</a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <a href="c cons.html">C </a>
+  <br>
+     <a href="index.html">HOME</a>
+      <a href="ccc.html">C++ mcq</a>
+        
+        <a href="data.html">data structure</a>
+        <a href="dbms.html">DBMS Quiz</a>
+        <a href="netw.html">Networking Quiz</a>
+        <a href="os.html">OS Quiz</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+  
+    <br>
+
+
+    <!-- Calculator Menu --
+    <div class="calculator-menu">
+      <ul>
+        <li><a href="gst.html">1 GST Calculator</a></li>
+        <li><a href="emi.html">2 EMI Calculator</a></li>
+        <li><a href="bmi.html">3 BMI Calculator</a></li>
+        <li><a href="sip.html">4 SIP Calculator</a></li>
+        <li><a href="age.html">5 Age Calculator</a></li>
+        <li><a href="per.html">6 Percentage Calculator</a></li>
+        <li><a href="dis.html">7 Discount Calculator</a></li>
+      </ul>
+    </div>-->
+
+    <div class="quiz-container">
+    <h1>🌐 Networking Quiz</h1>
+    <div id="question-box">
+      <p id="question-text">Loading question...</p>
+      <div id="options"></div>
+    </div>
+    <button id="next-btn" onclick="loadNextQuestion()">Next</button>
+    <p id="score-box"></p>
+  </div>
+
+
+  </div>
+  <style>
+.quiz-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#question-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #e7e7e7;
+}
+
+button:hover {
+  background-color: #d4d4d4;
+}
+
+#next-btn {
+  background-color: #4CAF50;
+  color: white;
+  display: none;
+}
+
+.correct {
+  background-color: #c8e6c9;
+}
+
+.wrong {
+  background-color: #ffcdd2;
+}
+
+#score-box {
+  font-size: 18px;
+  margin-top: 20px;
+}
+  </style>
+  <script>
+    const questions = [
+  {
+    question: "Which layer of the OSI model handles routing?",
+    options: ["Physical", "Data Link", "Network", "Transport"],
+    answer: 2
+  },
+  {
+    question: "Which protocol is used to send emails?",
+    options: ["SMTP", "FTP", "HTTP", "SNMP"],
+    answer: 0
+  },
+  {
+    question: "What does IP stand for?",
+    options: ["Internet Protocol", "Internal Process", "Interface Protocol", "Interconnect Program"],
+    answer: 0
+  },
+  {
+    question: "Which device connects different networks together?",
+    options: ["Hub", "Switch", "Router", "Repeater"],
+    answer: 2
+  },
+  {
+    question: "What is the default port for HTTP?",
+    options: ["21", "80", "443", "25"],
+    answer: 1
+  },
+  {
+    question: "Which address is used to identify a device on a network?",
+    options: ["MAC address", "IP address", "URL", "DNS"],
+    answer: 1
+  },
+  {
+    question: "Which protocol is used for secure web browsing?",
+    options: ["HTTP", "FTP", "HTTPS", "SSH"],
+    answer: 2
+  },
+  {
+    question: "Which layer ensures error-free delivery?",
+    options: ["Application", "Transport", "Network", "Session"],
+    answer: 1
+  },
+  {
+    question: "What is the full form of DNS?",
+    options: [
+      "Digital Network System",
+      "Domain Name Server",
+      "Domain Name System",
+      "Data Name Server"
+    ],
+    answer: 2
+  },
+  {
+    question: "Which device operates at the Data Link layer?",
+    options: ["Switch", "Router", "Bridge", "Modem"],
+    answer: 0
+  },
+  {
+    question: "Which protocol is used for file transfer?",
+    options: ["SMTP", "FTP", "HTTP", "IP"],
+    answer: 1
+  },
+  {
+    question: "IPV4 uses how many bits for addressing?",
+    options: ["16", "32", "64", "128"],
+    answer: 1
+  },
+  {
+    question: "Ping command is used to:",
+    options: [
+      "Check disk health",
+      "Test network connectivity",
+      "Format a drive",
+      "Clear DNS cache"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which is not a class of IP address?",
+    options: ["A", "B", "C", "G"],
+    answer: 3
+  },
+  {
+    question: "What is the maximum length of a MAC address?",
+    options: ["32 bits", "48 bits", "64 bits", "128 bits"],
+    answer: 1
+  },
+  {
+    question: "What is the role of ARP?",
+    options: [
+      "Resolve IP to domain",
+      "Resolve IP to MAC address",
+      "Resolve MAC to IP address",
+      "Transfer files"
+    ],
+    answer: 1
+  },
+  {
+    question: "Which of the following works on port 22?",
+    options: ["FTP", "HTTP", "SSH", "DNS"],
+    answer: 2
+  },
+  {
+    question: "Which of these is a connectionless protocol?",
+    options: ["TCP", "UDP", "SSH", "FTP"],
+    answer: 1
+  },
+  {
+    question: "The topology with a central device is:",
+    options: ["Ring", "Bus", "Mesh", "Star"],
+    answer: 3
+  },
+  {
+    question: "Which OSI layer encrypts data?",
+    options: ["Session", "Presentation", "Application", "Transport"],
+    answer: 1
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+  const q = questions[currentQuestion];
+  document.getElementById("question-text").innerText = `Q${currentQuestion + 1}: ${q.question}`;
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
+
+  q.options.forEach((opt, index) => {
+    const btn = document.createElement("button");
+    btn.innerText = opt;
+    btn.onclick = () => checkAnswer(index, btn);
+    optionsDiv.appendChild(btn);
+  });
+  document.getElementById("next-btn").style.display = "none";
+}
+
+function checkAnswer(selected, btn) {
+  const correct = questions[currentQuestion].answer;
+  const allButtons = document.querySelectorAll("#options button");
+
+  allButtons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === correct) b.classList.add("correct");
+    if (i === selected && i !== correct) b.classList.add("wrong");
+  });
+
+  if (selected === correct) score++;
+  document.getElementById("next-btn").style.display = "inline-block";
+}
+
+function loadNextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < questions.length) {
+    loadQuestion();
+  } else {
+    showFinalScore();
+  }
+}
+
+function showFinalScore() {
+  document.getElementById("question-box").innerHTML = `<h2>🎉 Quiz Completed!</h2><p>You scored ${score} out of ${questions.length}.</p>`;
+  document.getElementById("next-btn").style.display = "none";
+}
+
+window.onload = loadQuestion;
+
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <!-- JS --
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>-->
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Browser C Compiler</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    textarea { width: 100%; height: 200px; font-family: monospace; }
+    button { padding: 10px 20px; margin-top: 10px; }
+    pre { background: #eee; padding: 10px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h2>💻 Offline C Compiler (Browser-Based)</h2>
+  <textarea id="code">
+// Write your C code here
+#include <stdio.h>
+
+int main() {
+    printf("Hello from browser-based C compiler!\\n");
+    return 0;
+}
+  </textarea><br>
+  <button onclick="runCode()">Run</button>
+  <pre id="output">Output will appear here...</pre>
+
+  <script src="https://cdn.jsdelivr.net/gh/evanw/tinycc/tcc.js"></script>
+  <script>
+    async function runCode() {
+      const outputEl = document.getElementById('output');
+      const code = document.getElementById('code').value;
+
+      try {
+        outputEl.textContent = 'Compiling and running...';
+
+        const result = await TCC.run(code, {
+          print: (text) => outputEl.textContent += text,
+          printErr: (text) => outputEl.textContent += 'Error: ' + text,
+        });
+
+        outputEl.textContent += '\n\n[Program exited with code ' + result + ']';
+      } catch (err) {
+        outputEl.textContent = 'Compilation failed:\n' + err;
+      }
+    }
+  </script>
+</body>
+</html>
